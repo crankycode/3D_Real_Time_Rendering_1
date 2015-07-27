@@ -1,0 +1,73 @@
+3D Real Time Rendering 
+
+Compile by typing 'make', to run type ./main
+
+Note: If you get an error "shader.c:5:21: error: GL/glew.h: No such file or directory"
+Please make sure you have installed "libglew-dev" and "libglew"
+
+When the program start-up, the Tesselation is set at 2048
+
+Finish:
+o   - Toggle between immediate mode/VBO/GPU Generated shape:
+      grid, sphere, torus shape, press 'o' to toggle from immediate to VBO;
+      but to switch to GPU generated shape you need switch 'ON' shader('s') and  
+      press ('g') than press and press 'o'.
+
+T/t - Double/Halve Tesselation:
+      4x4 as base to maximum of 4096 x 4096 tesselation
+
+l   - Lighting Toggle: 
+      when shader ('s') is 'ON', lighting toggle does not affect.
+
+f   - Smooth/Flat shading
+
+H/h - Increase/decrease shininess
+
+v   - Local Viewer: 
+      . When shader ('s') is 'OFF' local viewer is using openGL to generate local
+        viewer effects but when shader ('s') is 'ON'  it is using the shader to generate
+
+n   - Draw Normals: 
+      Will only display the normals when drawing using immediate/VBO generated shape
+
+x/X - Toggle OSD short (frame rate only) and long (all settings)
+
+z/Z - Toggle frame rate and state settings output to stdout as text
+
+s   - Shader Toggle:
+      . This key is disable when you are in bump map and displacement mapping
+    
+p   - Per (vertex, pixel) lighting:
+      . This key is disable when you are in bump/displacement mapping mode
+      . For bump mapping we decided to use per-vertex blinn phong lighting
+      . For displacement mapping we decided to use per-vertex phong lighting
+      
+m   - Blinn-Phong or Phong specular lighting model
+      . This key is disable when you are in bump/displacement mapping mode
+      . For bump mapping we decided to use per-vertex blinn phong lighting
+      . For displacement mapping we decided to use per-vertex phong lighting
+      
+g   - Shader based shape generation toggle(GPU): 
+      . You can only toggle to drawing using GPU when you are in shader mode ('s')
+      . It will always start from grid when it is turn-on.
+    
+b   - Bump Mapping Toggle:
+      . When rendering bump mapping, the 'p','m','n','s' keys had been disable.
+      . The only keys that are enabled are the 'o','a','f','v','t','r','x','z','d'
+      . The default setting it uses are "Per-Vertex Blinn Phong" lighting , and 
+        it will switch to "GPU Generated Grid" shape, to toggle between shapes 
+        press 'o'.
+      . Switch off bump mapping to re-able those keys.
+    
+r/R - Double/Halve number of bumps, with base of 16x16 to maximum of 128x128
+
+d   - Displacement Mapping Toggle:
+      . When rendering displacement mapping, the 'p','m','n','s' key has been disable.
+      . The only keys that are enabled are the 'o','a','f','v','t','r','x','z','b'
+      . The default setting it uses are "Per-Vertex Phong" lighting , and 
+        it will switch to "GPU Generated Grid" shape, to toggle between shapes 
+        press 'o'.
+      . Switch off displacement mapping to re-able those keys.
+    
+a   - Animation Toggle for bump/displacement mapping.
+      
